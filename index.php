@@ -69,7 +69,7 @@
       }
 
       if (array_key_exists("genre", $_GET)) {
-        $annee = $_GET["genre"];
+        $genre = $_GET["genre"];
         $req = $dbh->prepare("SELECT * FROM film INNER JOIN genre ON film.genre_id = genre.id WHERE genre.genre = $genre");
         $req->bindParam(":genre", $genre);
         $req->execute();
